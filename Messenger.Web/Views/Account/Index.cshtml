@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+@section Head {
+    <link href="@Url.Content("~/Content/Login.css")" rel="stylesheet" type="text/css" />    
+}
+
+<center>
+    <div class="login_greeting">
+        <div>
+            <h2><u>You are not logged in</u></h2>
+        </div>
+        <br/>
+        <br/>
+        <span>
+            <button id="loginLink" class="btn" type="button" onclick="location.href='@Url.Action("Login", "Account")'">
+                Log in
+            </button>
+        </span>
+        or
+        <span>
+            <button id="registerLink" class="btn" type="button" onclick="location.href='@Url.Action("Register", "Account")'">
+                Register
+            </button>
+        </span>
+    </div>
+</center>

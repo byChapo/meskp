@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    @using Microsoft.AspNet.Identity
+    @if (!Request.IsAuthenticated)
+    {
+        Response.Redirect("~/Account/Index");
+        @*using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                    </li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                </ul>
+            }*@
+    }
+    <div class="header">
+        <button id="account_ref" class="btn" type="button" onclick="location.href='@Url.Action("Index", "Manage")'">
+            You are loginned as @User.Identity.GetUserName()
+        </button>
+
+        <span>
+            <a href="@Url.Action("Index", "Home")">
+                <img id="return_img" src="~/images/home.png" title="To the main page" />
+            </a>
+        </span>
+
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <a href="javascript:document.getElementById('logoutForm').submit()">
+                <img id="logout_img" src="~/images/logout.png" title="Log out" />
+            </a>
+        }
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+
+    <div id="modDialog" class="modal fade">
+        <div id="dialogContent" class="modal-dialog"></div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,160 @@
+﻿html, body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #444444;
+    color: #dddddd;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.container {
+    position: relative;
+    height: 90%;
+}
+
+.modal-footer {
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+}
+
+.row {
+    position: relative;
+    height: inherit;
+}
+
+.header {
+    position: relative;
+    height: 50px;
+    background: #444444;
+    width: 100%;
+    padding: 0 25% 0 25%;
+    box-shadow: 1px 0 1px 1px #eeeeee;
+}
+
+#logout_img {
+    position: absolute;
+    height: 100%;
+    filter: invert(0.9);
+}
+
+#return_img {
+    position: absolute;
+    height: 100%;
+    filter: invert(0.9);
+    right: 28%;
+}
+
+#account_ref {
+    position: absolute;
+    height: 100%;
+    border-radius: 0;
+    background: transparent;
+    font-size: 20px;
+    color: #eeeeee;
+}
+
+#account_ref:hover {
+    animation: acc_ref_hover 2s forwards;
+}
+
+@keyframes acc_ref_hover {
+    100% {
+        background: #eeeeee;
+        color: #000000;
+    }
+}
+
+.warning_message {
+    position: absolute;
+    color: #ee0000;
+}
+
+.user_info {
+    font-size: 18px;
+}
+
+.contact_info {
+    margin: 5px 0 12px 0;
+    padding: 10px 10px 10px 10px;
+    font-size: 16px;
+    border: dotted 1px #aaaaaa;
+    border-radius: 5px;
+}
+
+.possibleContact {
+    border: solid 1px #555555;
+    border-radius: 20%;
+    box-shadow: 1px 2px 3px #555555;
+    margin: 5px 10px 5px 10px;
+}
+
+.possibleContact:hover {
+    border: solid 1px #4444bb;
+    box-shadow: 1px 2px 3px #7477b6;
+    background: #fafaff
+}
+
+.possibleContact p {
+    font-size: 18px;
+}
+
+#userContacts {
+    position: relative;
+    width: 100%;
+    height: initial;
+    display: inline-block;
+}
+
+.info_img {
+    width: 30px;
+    display: table;
+    margin: 0 auto;
+    filter: invert(0.8);
+}
+
+.close_icon {
+    width: 24px;
+    position: absolute;
+    right: 0;
+    margin: 5px 5px 0 0;
+    filter: invert(1);
+}
+
+.modal-content {
+    background: #444444;
+}
+
+.remove_user {
+    height: 8px;
+    width: 25px;
+    background: #ffffff;
+    border: solid;
+    float: left;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.hidden_elem {
+    display: none;
+}

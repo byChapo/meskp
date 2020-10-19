@@ -1,0 +1,27 @@
+﻿.chat_info {
+    position: relative;
+    height: 100px;
+}
+
+.chat_info_content {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.chat_info_icon {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    right: 0;
+    border-left: solid 1px #bbbbbb;
+    padding: 5px 5px;
+}
+
+.chat_icon {
+    height: inherit;
+    width:100%;
+}
