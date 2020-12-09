@@ -35,15 +35,14 @@
                 <img id="return_img" src="~/images/home.png" title="To the main page" />
             </a>
         </span>
-
+       
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
         {
-            @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-            <a href="javascript:document.getElementById('logoutForm').submit()">
-                <img id="logout_img" src="~/images/logout.png" title="Log out" />
-            </a>
-        }
+                    <a href="javascript:document.getElementById('logoutForm').submit()">
+                        <img id="logout_img" src="~/images/logout.png" title="Log out" />
+                    </a>}
     </div>
     <div class="container body-content">
         @RenderBody()
